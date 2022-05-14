@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { Movies } from 'src/app/models/Movies';
 
-import { Genre, MoviesGenres } from 'src/app/models/movies-genres';
+import { Genre } from 'src/app/models/movies-genres';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -17,13 +18,25 @@ export class MoviesListComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
-    this.moviesService.getPopularMovies().subscribe(
+    this.moviesService.getPopularMovies()
+    .pipe(take(1)) //nesta linha o unsubscribe é feito após a req. http
+    .subscribe(
       (data) => this.popularMovies = data,
     );
-    this.moviesService.getGenresOfMovies().subscribe(
+
+    this.moviesService.getGenresOfMovies()
+    .pipe(take(1))
+    .subscribe(
       (data) => this.genres = data.genres,
     );
   }
   
+  filterMoviesByGenre(genreId: number) {
+    this.moviesService.getMoviesByGenre(genreId)
+    .pipe(take(1))
+    .subscribe(
+      (data) => this.popularMovies = data,
+    )
+  }
 
 }

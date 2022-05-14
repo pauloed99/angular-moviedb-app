@@ -3,10 +3,13 @@
         <h1>Lista de filmes mais populares:</h1>
         <mat-form-field appearance="fill">
             <mat-label>Escolha um gênero do filme</mat-label>
-            <mat-select >
-                <div *ngFor="let genre of genres">
-                    <mat-option value={{genre.name}}>{{genre.name}}</mat-option>
-                </div>
+            <mat-select (selectionChange)="filterMoviesByGenre($event.value)">
+                <mat-option value="Aleatório">
+                    Aleatório
+                </mat-option>
+                <mat-option *ngFor="let genre of genres" value={{genre.id}}>
+                    {{genre.name}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>

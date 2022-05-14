@@ -15,14 +15,14 @@ export class MoviesService {
 
   getPopularMovies(): Observable<Movies> {
     return this.httpClient.get<Movies>(
-      this.baseUrl + 'discover/movie?sort_by=popularity.dsc',
+      this.baseUrl + 'movie/popular',
       {params: this.queryParams},
     );
   }
 
-  getMoviesByGenre(genre: string): Observable<Movies> {
+  getMoviesByGenre(genreId: number): Observable<Movies> {
     return this.httpClient.get<Movies>(
-      this.baseUrl + `discover/movie?with_genres=${genre}`,
+      this.baseUrl + `discover/movie?with_genres=${genreId}`,
       {params: this.queryParams},
     );
   }
@@ -40,5 +40,7 @@ export class MoviesService {
       {params: this.queryParams},
     );
   }
+
+  
 
 }
