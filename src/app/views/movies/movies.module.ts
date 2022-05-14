@@ -5,6 +5,8 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
   ]
 })
 export class MoviesModule { }

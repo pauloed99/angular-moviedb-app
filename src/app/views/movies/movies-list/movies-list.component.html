@@ -1,1 +1,21 @@
-<p>movies-list works!</p>
+<div id="container">
+    <div id="filter-select">
+        <h1>Lista de filmes mais populares:</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Escolha um gênero do filme</mat-label>
+            <mat-select >
+                <div *ngFor="let genre of genres">
+                    <mat-option value={{genre.name}}>{{genre.name}}</mat-option>
+                </div>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-spinner *ngIf="!popularMovies" diameter="50"></mat-spinner>
+    <div *ngIf="popularMovies" id="movies-row">
+        <div *ngFor="let movie of popularMovies.results" id="movie">
+            <img src="{{'https://image.tmdb.org/t/p/w500/' + movie.poster_path}}">
+            <p id="movie-title">{{movie.title}}</p>
+            <p id="movie-release-date">{{movie.release_date}}</p>
+        </div>
+    </div>
+</div>
