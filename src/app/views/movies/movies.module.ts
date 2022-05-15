@@ -9,6 +9,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MovieSearchInputComponent } from './movie-search-input/movie-search-input.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { MovieSearchInputComponent } from './movie-search-input/movie-search-inp
     MatProgressSpinnerModule,
     MatSelectModule,
     FormsModule, 
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
   ]
 })
 export class MoviesModule { }
