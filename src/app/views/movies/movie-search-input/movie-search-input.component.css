@@ -27,26 +27,34 @@ p {
     font-size: 2rem;
 }
 
+@media (max-width: 1200px) {
+    mat-option {font-size: 1.2rem;}
+}
+
 @media (max-width: 992px) {
     p {font-size: 1.5rem;}
     #search-input {width: 90%;}
     #search-input mat-label {font-size: 0.8rem;}
+    mat-option {font-size: 1.1rem;}
 }
 
 @media (max-width: 768px) {
     p {font-size: 1.2rem;}
     #search-input {width: 75%;}
     #search-input mat-label {font-size: 0.75rem;}
+    mat-option {font-size: 0.9rem;}
 }
 
 @media (max-width: 630px) {
     p {font-size: 1rem;}
     #search-input {width: 60%;}
     #search-input mat-label {font-size: 0.7rem;}
+    mat-option {font-size: 0.7rem;}
 }
 
 @media (max-width: 540px) {
     p {font-size: 0.9rem;}
     #search-input {width: 50%;}
     #search-input mat-label {font-size: 0.65rem;}
+    mat-option {font-size: 0.6rem;}
 }

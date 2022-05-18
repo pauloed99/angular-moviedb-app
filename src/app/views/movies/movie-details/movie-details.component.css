@@ -1,0 +1,22 @@
+#container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 60%;
+    border-radius: 2rem;
+    width: 25%;
+}
+
+#movie-infos {
+    margin-left: 3rem;
+    width: 25%;
+}
+
+#genres-list {
+    display: flex;
+    justify-content: space-between;
+}

@@ -5,7 +5,19 @@
         <form class="example-form">
             <mat-form-field id="search-input" appearance="fill">
               <mat-label>Filme</mat-label>
-              <input matInput placeholder="Pesquise o filme aqui">
+              <input matInput 
+              placeholder="Pesquise o filme aqui" 
+              [(ngModel)]="inputText"
+              (input)="handleInput()"
+              [ngModelOptions]="{standalone: true}"
+              [matAutocomplete]="auto"
+              >
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let movie of movies" 
+                [value]="movie" [routerLink]="['/movie-details', movie.id]">
+                  {{movie?.title}}
+                </mat-option>
+              </mat-autocomplete>
               <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </form>

@@ -1,0 +1,13 @@
+<div id="container">
+    <img src="{{'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path}}">
+    <div id="movie-infos">
+        <p>{{movieDetails?.title}} ({{movieDetails?.release_date}})</p>
+        <div id="genres-list">
+            <p *ngFor="let genre of movieDetails?.genres">{{genre.name}}</p>
+        </div>
+        <p>Duração do Filme: {{movieDetails?.runtime}} min.</p>
+        <p><mat-icon>movie</mat-icon>Trailer:</p>
+        <iframe [src]="url"></iframe>
+        <p>Sinopse:<br>{{movieDetails?.overview}}</p>
+    </div>
+</div>

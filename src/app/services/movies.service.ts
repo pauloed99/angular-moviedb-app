@@ -3,6 +3,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movies } from '../models/Movies';
 import { MoviesGenres } from '../models/movies-genres';
+import { MovieDetails } from '../models/movie-details';
+import { MovieVideos } from '../models/movie-videos';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +43,24 @@ export class MoviesService {
     );
   }
 
-  
+  getMovieDetails(movieId: number): Observable<MovieDetails> {
+    return this.httpClient.get<MovieDetails>(
+      this.baseUrl + `movie/${movieId}`,
+      {params: this.queryParams},
+    );
+  }
 
+  getMovieVideos(movieId: number): Observable<MovieVideos> {
+    return this.httpClient.get<MovieVideos>(
+      this.baseUrl + `movie/${movieId}/videos`,
+      {params: this.queryParams},
+    );
+  }
+
+  getMoviesBySearch(movieName: string): Observable<Movies> {
+    return this.httpClient.get<Movies>(
+      this.baseUrl + `search/movie/query=${movieName}`,
+      {params: this.queryParams},
+    );
+  }
 }

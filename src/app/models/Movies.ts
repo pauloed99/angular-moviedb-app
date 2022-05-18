@@ -5,7 +5,7 @@ export interface Movies {
     total_pages:   number;
 }
 
-interface Result {
+export interface Result {
     poster_path?:      string;
     adult:             boolean;
     overview:          string;
