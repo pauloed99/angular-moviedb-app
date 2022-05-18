@@ -1,13 +1,22 @@
 <div id="container">
-    <img src="{{'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path}}">
-    <div id="movie-infos">
-        <p>{{movieDetails?.title}} ({{movieDetails?.release_date}})</p>
-        <div id="genres-list">
-            <p *ngFor="let genre of movieDetails?.genres">{{genre.name}}</p>
+    <button 
+    mat-raised-button 
+    style="background-color: blue; color:white"
+    [routerLink]="['/']">
+    Voltar</button>
+    <mat-spinner *ngIf="!movieDetails" diameter="50"></mat-spinner>
+    <div id="movie-row" *ngIf="movieDetails">
+        <img src="{{'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path}}"
+        title="{{movieDetails?.title}}" alt="{{'imagem do filme: ' + movieDetails?.title}}">
+        <div id="movie-infos">
+            <p id="movie-title">{{movieDetails?.title}} ({{movieDetails?.release_date}})</p>
+            <div id="genres-list">
+                <p id="movie-genre" *ngFor="let genre of movieDetails?.genres">{{genre.name}}</p>
+            </div>
+            <p>Duração do Filme: {{movieDetails?.runtime}} min.</p>
+            <p>Trailer:</p>
+            <iframe id="movie-video" [src]="url" allowfullscreen="allowfullscreen"></iframe>
+            <p>Sinopse:<br>{{movieDetails?.overview}}</p>
         </div>
-        <p>Duração do Filme: {{movieDetails?.runtime}} min.</p>
-        <p><mat-icon>movie</mat-icon>Trailer:</p>
-        <iframe [src]="url"></iframe>
-        <p>Sinopse:<br>{{movieDetails?.overview}}</p>
     </div>
 </div>

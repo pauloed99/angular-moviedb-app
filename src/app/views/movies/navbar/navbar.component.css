@@ -1,0 +1,14 @@
+#container {
+    background-color: rgb(85, 85, 239);
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: rgb(143, 143, 236);
+    color: white;
+    height: 80%;
+    width: 5%;
+}

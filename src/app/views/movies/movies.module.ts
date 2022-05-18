@@ -14,13 +14,14 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatIconModule} from '@angular/material/icon';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     MoviesComponent,
     MoviesListComponent,
     MovieSearchInputComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +32,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule, 
-    MatAutocompleteModule, 
+    MatAutocompleteModule,
+    MatButtonModule, 
   ]
 })
 export class MoviesModule { }

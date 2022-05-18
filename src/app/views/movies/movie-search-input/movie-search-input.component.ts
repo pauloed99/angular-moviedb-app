@@ -24,5 +24,4 @@ export class MovieSearchInputComponent implements OnInit {
         .subscribe((data) => this.movies = data.results);
     }
   }
-
 }
