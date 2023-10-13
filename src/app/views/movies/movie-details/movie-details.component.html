@@ -1,22 +1,38 @@
 <div id="container">
-    <button 
-    mat-raised-button 
-    style="background-color: blue; color:white"
-    [routerLink]="['/']">
-    Voltar</button>
-    <mat-spinner *ngIf="!movieDetails" diameter="50"></mat-spinner>
-    <div id="movie-row" *ngIf="movieDetails">
-        <img src="{{'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path}}"
-        title="{{movieDetails?.title}}" alt="{{'imagem do filme: ' + movieDetails?.title}}">
-        <div id="movie-infos">
-            <p id="movie-title">{{movieDetails?.title}} ({{movieDetails?.release_date}})</p>
-            <div id="genres-list">
-                <p id="movie-genre" *ngFor="let genre of movieDetails?.genres">{{genre.name}}</p>
-            </div>
-            <p>Duração do Filme: {{movieDetails?.runtime}} min.</p>
-            <p>Trailer:</p>
-            <iframe id="movie-video" [src]="url" allowfullscreen="allowfullscreen"></iframe>
-            <p>Sinopse:<br>{{movieDetails?.overview}}</p>
-        </div>
+  <mat-spinner *ngIf="!movieDetails" diameter="50"></mat-spinner>
+  <button
+    mat-raised-button
+    style="background-color: blue; color: white"
+    [routerLink]="['/']"
+    *ngIf="movieDetails"
+  >
+    Voltar
+  </button>
+  <div id="movie-row" *ngIf="movieDetails">
+    <img
+      src="{{ 'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path }}"
+      title="{{ movieDetails?.title }}"
+      alt="{{ 'imagem do filme: ' + movieDetails?.title }}"
+    />
+    <div id="movie-infos">
+      <p id="movie-title">
+        {{ movieDetails?.title }} ({{ movieDetails?.release_date }})
+      </p>
+      <div id="genres-list">
+        <p id="movie-genre" *ngFor="let genre of movieDetails?.genres">
+          {{ genre.name }}
+        </p>
+      </div>
+      <p class="attribute-text">Duração do Filme:</p>
+      <p>{{ movieDetails?.runtime }} min.</p>
+      <p class="attribute-text">Trailer:</p>
+      <iframe
+        id="movie-video"
+        [src]="url"
+        allowfullscreen="allowfullscreen"
+      ></iframe>
+      <p class="attribute-text">Sinopse:</p>
+      <p>{{ movieDetails?.overview }}</p>
     </div>
+  </div>
 </div>

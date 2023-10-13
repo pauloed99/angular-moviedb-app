@@ -7,12 +7,10 @@
               <mat-label>Filme</mat-label>
               <input matInput 
               placeholder="Pesquise o filme aqui" 
-              [(ngModel)]="inputText"
-              (input)="handleInput()"
-              [ngModelOptions]="{standalone: true}"
               [matAutocomplete]="auto"
+              (input)="handleInput($event.target)"
               >
-              <mat-autocomplete #auto="matAutocomplete">
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText" (optionSelected)="handleOption($event.option.value)">
                 <mat-option *ngFor="let movie of movies" 
                 [value]="movie" [routerLink]="['/movie-details', movie.id]">
                   {{movie?.title}}

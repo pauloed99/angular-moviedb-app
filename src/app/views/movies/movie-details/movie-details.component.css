@@ -27,16 +27,21 @@ img {
 #genres-list {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 #movie-genre {
     color: blue;
+    margin-right: 0.5rem;
 }
 
 #movie-title {
     font-weight: bold;
     font-size: 1.6rem;
+}
+
+.attribute-text {
+    font-weight: bold;
 }
 
 p {font-size: 1.2rem;}
