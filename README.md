@@ -1,27 +1,47 @@
-# AngularMoviedbApp
+# Angular MovieDB 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+# Sobre o projeto
 
-## Development server
+Aplicação Web feita com o Framework Angular com o intuito de demonstrar o consumo de uma api pública de filmes e a implementação de recursos de acessibilidade.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Na aplicação é possível pesquisar algum filme e ver mais detalhes sobre ele, bem como filtrar os filmes por categoria. 
+Além disso, há recursos de acessibilidade que permitem aumentar e diminuir o tamanho da fonte.
 
-## Code scaffolding
+## Layout web
+![Web 1](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-1.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Web 2](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-2.png)
 
-## Build
+![Web 3](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-3.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Web 4](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-4.png)
 
-## Running unit tests
+![Web 5](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-5.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Web 6](https://github.com/pauloed99/angular-moviedb-app/blob/master/src/assets/readme/post-6.png)
 
-## Running end-to-end tests
+# Tecnologias utilizadas
+## Front end
+- HTML / CSS / JavaScript / TypeScript
+- Angular
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Como executar o projeto
 
-## Further help
+Pré-requisitos: npm / yarn
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+# clonar repositório
+git clone https://github.com/pauloed99/angular-moviedb-app
+
+# instalar dependências
+npm install
+
+# executar o projeto
+npm start
+```
+
+# Autor
+
+Paulo Eduardo Dutra
+
+https://www.linkedin.com/in/paulo-eduardo-dutra/
