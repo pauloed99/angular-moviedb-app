@@ -15,13 +15,6 @@ export class MoviesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPopularMovies(): Observable<Movies> {
-    return this.httpClient.get<Movies>(
-      this.baseUrl + 'movie/popular',
-      {params: this.queryParams},
-    );
-  }
-
   getMoviesByGenre(genreId: number): Observable<Movies> {
     return this.httpClient.get<Movies>(
       this.baseUrl + `discover/movie?with_genres=${genreId}`,

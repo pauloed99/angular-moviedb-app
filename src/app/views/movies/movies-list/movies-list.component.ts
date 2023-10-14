@@ -14,20 +14,17 @@ export class MoviesListComponent implements OnInit {
 
   popularMovies?: Movies;
   genres?: Genre[];
+  actionGenreId = 28;
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
-    this.moviesService.getPopularMovies()
-    .pipe(take(1)) //nesta linha o unsubscribe é feito após a req. http
-    .subscribe(
-      (data) => this.popularMovies = data,
-    );
+    this.filterMoviesByGenre(this.actionGenreId);
 
     this.moviesService.getGenresOfMovies()
     .pipe(take(1))
     .subscribe(
-      (data) => this.genres = data.genres,
+      (data) => this.genres = data.genres
     );
   }
   
