@@ -1,23 +1,31 @@
 <div id="container">
-    <div id="input-background">
-        <p>Bem-vindo(a).</p>
-        <p>Explore aqui vários tipos de filmes!</p>
-        <form class="example-form">
-            <mat-form-field id="search-input" appearance="fill">
-              <mat-label>Filme</mat-label>
-              <input matInput 
-              placeholder="Pesquise o filme aqui" 
-              [matAutocomplete]="auto"
-              (input)="handleInput($event.target)"
-              >
-              <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText" (optionSelected)="handleOption($event.option.value)">
-                <mat-option *ngFor="let movie of movies" 
-                [value]="movie" [routerLink]="['/movie-details', movie.id]">
-                  {{movie?.title}}
-                </mat-option>
-              </mat-autocomplete>
-              <mat-icon matSuffix>search</mat-icon>
-            </mat-form-field>
-        </form>
-    </div>
+  <div id="input-background">
+    <p>Bem-vindo(a).</p>
+    <p>Explore aqui vários tipos de filmes!</p>
+    <form class="example-form">
+      <mat-form-field id="search-input" appearance="fill">
+        <mat-label>Filme</mat-label>
+        <input
+          matInput
+          placeholder="Pesquise o filme aqui"
+          [matAutocomplete]="auto"
+          (input)="handleInput($event.target)"
+        />
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          [displayWith]="getOptionText"
+          (optionSelected)="handleOption($event.option.value)"
+        >
+          <mat-option
+            *ngFor="let movie of movies"
+            [value]="movie"
+            [routerLink]="['/movie-details', movie.id]"
+          >
+            {{ movie?.title }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
 </div>

@@ -1,23 +1,33 @@
 <div id="container">
-    <div id="filter-select">
-        <h1>Lista de filmes mais populares:</h1>
-        <mat-form-field appearance="fill">
-            <mat-label>Escolha um gênero do filme</mat-label>
-            <mat-select value={{actionGenreId}} (selectionChange)="filterMoviesByGenre($event.value)">
-                <mat-option *ngFor="let genre of genres" value={{genre.id}}>
-                    {{genre.name}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+  <div id="filter-select">
+    <h1>Lista de filmes mais populares:</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Escolha um gênero do filme</mat-label>
+      <mat-select
+        value="{{ actionGenreId }}"
+        (selectionChange)="filterMoviesByGenre($event.value)"
+      >
+        <mat-option *ngFor="let genre of genres" value="{{ genre.id }}">
+          {{ genre.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-spinner *ngIf="!popularMovies" diameter="50"></mat-spinner>
+  <div *ngIf="popularMovies" id="movies-row">
+    <div *ngFor="let movie of popularMovies.results" id="movie">
+      <img
+        src="{{ 'https://image.tmdb.org/t/p/w500/' + movie.poster_path }}"
+        [routerLink]="['/movie-details', movie.id]"
+        title="{{ movie.title }}"
+        alt="{{ 'imagem do filme: ' + movie.title }}"
+      />
+      <p id="movie-title" [routerLink]="['/movie-details', movie.id]">
+        {{ movie.title }}
+      </p>
+      <p id="movie-release-date">
+        {{ movie.release_date | date : "dd/MM/yyyy" }}
+      </p>
     </div>
-    <mat-spinner *ngIf="!popularMovies" diameter="50"></mat-spinner>
-    <div *ngIf="popularMovies" id="movies-row">
-        <div *ngFor="let movie of popularMovies.results" id="movie">
-            <img src="{{'https://image.tmdb.org/t/p/w500/' + movie.poster_path}}" 
-            [routerLink]="['/movie-details', movie.id]"
-            title="{{movie.title}}" alt="{{'imagem do filme: ' + movie.title}}">
-            <p id="movie-title" [routerLink]="['/movie-details', movie.id]">{{movie.title}}</p>
-            <p id="movie-release-date">{{movie.release_date | date:"dd/MM/yyyy"}}</p>
-        </div>
-    </div>
+  </div>
 </div>

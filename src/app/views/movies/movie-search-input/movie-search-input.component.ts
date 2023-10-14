@@ -7,22 +7,23 @@ import { MoviesService } from 'src/app/services/movies.service';
 @Component({
   selector: 'app-movie-search-input',
   templateUrl: './movie-search-input.component.html',
-  styleUrls: ['./movie-search-input.component.css']
+  styleUrls: ['./movie-search-input.component.css'],
 })
 export class MovieSearchInputComponent {
   movies?: Result[];
 
-  constructor(private moviesService: MoviesService, private router: Router) { }
-  
+  constructor(private moviesService: MoviesService, private router: Router) {}
+
   getOptionText(option: Result) {
     return option?.title;
   }
 
   handleInput(inputText: any) {
-    if(inputText.value != '') {
-      this.moviesService.getMoviesByTitle(inputText.value)
+    if (inputText.value != '') {
+      this.moviesService
+        .getMoviesByTitle(inputText.value)
         .pipe(take(1))
-        .subscribe((data) => this.movies = data.results);
+        .subscribe((data) => (this.movies = data.results));
     }
   }
 

@@ -1,92 +1,117 @@
 #container {
-    padding-left: 5rem;
-    margin-top: 3rem;
+  padding-left: 5rem;
+  margin-top: 3rem;
 }
 
 #filter-select {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 h1 {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 #movies-row {
-    display: flex;
-    align-items: center;
-    overflow: auto;
-    width: 80%;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  width: 80%;
+  align-self: center;
 }
 
 #movie {
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 
 img {
-    height: 40vh;
-    border-radius: 2rem;
-    cursor: pointer;
+  height: 40vh;
+  border-radius: 2rem;
+  cursor: pointer;
 }
 
 #movie-title {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 #movie-title:hover {
-    color: rgb(50, 50, 240);
-    cursor: pointer;
+  color: rgb(50, 50, 240);
+  cursor: pointer;
 }
 
-h1 {font-size: 1.6rem;}
+h1 {
+  font-size: 1.6rem;
+}
 
 @media (max-width: 992px) {
-    h1 {font-size: 1.5rem;}
-    img {height: 35vh;}
+  h1 {
+    font-size: 1.5rem;
+  }
+  img {
+    height: 35vh;
+  }
 }
 
 @media (max-width: 768px) {
-    h1 {font-size: 1rem;}
-    img {height: 30vh;}
-    #movie-title{font-size: 0.9rem;}
+  h1 {
+    font-size: 1rem;
+  }
+  img {
+    height: 30vh;
+  }
+  #movie-title {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 630px) {
-    #container {
-        padding-left: 0rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  #container {
+    padding-left: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    img {height: 25vh;}
+  img {
+    height: 25vh;
+  }
 
-    #movie-title{font-size: 0.8rem;}
+  #movie-title {
+    font-size: 0.8rem;
+  }
 
-    #filter-select {
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  #filter-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    h1 {font-size: 0.9rem; margin-right: 0;}
+  h1 {
+    font-size: 0.9rem;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 540px) {
-    #movie-title{font-size: 0.75rem;}
+  #movie-title {
+    font-size: 0.75rem;
+  }
 
-    #filter-select {
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  #filter-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    h1 {font-size: 0.9rem;}
-    img {height: 20vh;}
+  h1 {
+    font-size: 0.9rem;
+  }
+  img {
+    height: 20vh;
+  }
 }
